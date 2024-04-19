@@ -16,41 +16,12 @@ struct HomePopularView: View {
                 
                 ScrollView(.horizontal) {
                     HStack {
-                        Button("Acción") {
-                            //
-                        }
-                        .foregroundStyle(.white)
-                        .buttonStyle(.bordered)
-                        Button("Drama") {
-                            //
-                        }
-                        .foregroundStyle(.white)
-                        .buttonStyle(.bordered)
-                        Button("Comedia") {
-                            //
-                        }
-                        .foregroundStyle(.white)
-                        .buttonStyle(.bordered)
-                        Button("Anime") {
-                            //
-                        }
-                        .foregroundStyle(.white)
-                        .buttonStyle(.bordered)
-                        Button("Acción") {
-                            //
-                        }
-                        .foregroundStyle(.white)
-                        .buttonStyle(.bordered)
-                        Button("Acción") {
-                            //
-                        }
-                        .foregroundStyle(.white)
-                        .buttonStyle(.bordered)
-                        Button("Acción") {
-                            //
-                        }
-                        .foregroundStyle(.white)
-                        .buttonStyle(.bordered)
+                        ButtonView(title: "Acción", foregroundColor: .white, styleButton: .bordered)
+                        ButtonView(title: "Drama", foregroundColor: .white, styleButton: .bordered)
+                        ButtonView(title: "Comedia", foregroundColor: .white, styleButton: .bordered)
+                        ButtonView(title: "Anime", foregroundColor: .white, styleButton: .bordered)
+                        ButtonView(title: "Terror", foregroundColor: .white, styleButton: .bordered)
+                        ButtonView(title: "Ciencia-Ficción", foregroundColor: .white, styleButton: .bordered)
                         
                     }
                 }
