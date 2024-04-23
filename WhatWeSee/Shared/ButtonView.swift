@@ -13,9 +13,11 @@ struct ButtonView: View {
     let foregroundColor: Color
     let styleButton: BorderedButtonStyle
     
+    var action: () -> Void
+    
     var body: some View {
         Button(title) {
-            //
+            action()
         }
         .foregroundStyle(foregroundColor)
         .buttonStyle(styleButton)
@@ -23,5 +25,5 @@ struct ButtonView: View {
 }
 
 #Preview {
-    ButtonView(title: "Acción", foregroundColor: .white, styleButton: .bordered)
+    ButtonView(title: "Acción", foregroundColor: .white, styleButton: .bordered,  action: { print("boton") })
 }
