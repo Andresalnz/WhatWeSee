@@ -10,22 +10,16 @@ import SwiftUI
 struct HomePopularView: View {
     
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    @StateObject var viewModel: HomePopularViewModel = HomePopularViewModel()
+    
+    //@State var currentGenre = "Populares"
+    
     var body: some View {
-        ScrollView {
-            VStack {
+        List {
+           
+            SectionsHomePopularView(content: ListGenreSection(listGenres: viewModel.genresMovie, currentGenre: $viewModel.currentGenre))
                 
-                ScrollView(.horizontal) {
-                    HStack {
-                        ButtonView(title: "Acción", foregroundColor: .white, styleButton: .bordered)
-                        ButtonView(title: "Drama", foregroundColor: .white, styleButton: .bordered)
-                        ButtonView(title: "Comedia", foregroundColor: .white, styleButton: .bordered)
-                        ButtonView(title: "Anime", foregroundColor: .white, styleButton: .bordered)
-                        ButtonView(title: "Terror", foregroundColor: .white, styleButton: .bordered)
-                        ButtonView(title: "Ciencia-Ficción", foregroundColor: .white, styleButton: .bordered)
-                        
-                    }
-                }
-                Text("La + Popular en Acción")
+                Text(Constants.titleMorePopularHome)
                     .padding(.top, 20)
                     .padding(.leading, 10)
                     .font(.title)
@@ -34,21 +28,16 @@ struct HomePopularView: View {
                     image.image?.resizable()
                         .frame(width: 300, height: 400)
                         .border(.white, width: 2)
-                    
-                    
+                        .frame(maxWidth: .infinity,alignment: .center)
                 }
+                ButtonView(title: Constants.myListButton, foregroundColor: .white, styleButton: .bordered, action: {
+                    print("epp")
+                })
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.leading, 210)
+                   
                 
-                
-                Button("+ Mi lista") {
-                    //
-                }
-                .foregroundStyle(.white)
-                .buttonStyle(.bordered)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.trailing, 45)
-                
-                
-                Text("Acción")
+            Text(viewModel.currentGenre)
                     .font(.title)
                     .padding(.leading, 10)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -58,22 +47,24 @@ struct HomePopularView: View {
                         image.image?.resizable()
                             .frame(width: 150, height: 220)
                     }
-                 
+                    
                     AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500/ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg")) { image in
                         image.image?.resizable()
                             .frame(width: 150, height: 220)
                     }
-                    
                     Text("hola")
                 })
-            }
+            
+        }
+        .listStyle(.plain)
+        .onAppear {
+            viewModel.loadUI()
         }
         
-       
     }
 }
 
 #Preview {
     HomePopularView()
-       
+    
 }
