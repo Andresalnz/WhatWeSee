@@ -9,7 +9,7 @@ import Foundation
 
 struct GenreMovieListDTO: Codable, Identifiable, Hashable {
     let id: Int?
-    let genres: [GenreMovieDTO]
+    let genres: [GenreMovieDTO]?
 }
 
 struct GenreMovieDTO: Codable, Identifiable, Hashable {
