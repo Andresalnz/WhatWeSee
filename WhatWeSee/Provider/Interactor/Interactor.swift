@@ -20,4 +20,8 @@ struct Interactor: WWSInteractor {
     func getGenreList() async throws -> GenreMovieListDTO {
         return try await repository.getJSON(url: Util.Services.genreList.url(), type: GenreMovieListDTO.self)
     }
+    
+    func getPopularList() async throws -> PopularMovieListDTO {
+        return try await repository.getJSON(url: URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=d24265d9cbfd2e4119f0539b474f7c64"), type: PopularMovieListDTO.self)
+    }
 }
