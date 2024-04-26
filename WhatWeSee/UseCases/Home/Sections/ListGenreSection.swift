@@ -9,17 +9,20 @@ import SwiftUI
 
 struct ListGenreSection: View {
     
-     var listGenres: [GenreMovieBO]
+    var listGenres: [GenreMovieBO]
+    
     
     @Binding var currentGenre: String
     
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack {
-                ForEach(listGenres, id: \.id) { genre in
-                    ButtonView(title: genre.name ?? "", foregroundColor: .white, styleButton: .bordered, action: {
-                        currentGenre = genre.name!
-                    })
+        Section {
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(listGenres, id: \.id) { genre in
+                        ButtonView(title: genre.name ?? "", foregroundColor: .white, styleButton: .bordered, action: {
+                            currentGenre = genre.name!
+                        })
+                    }
                 }
             }
         }
