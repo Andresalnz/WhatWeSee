@@ -11,7 +11,7 @@ import SwiftUI
 struct WhatWeSeeApp: App {
     var body: some Scene {
         WindowGroup {
-            HomePopularView().environmentObject(HomePopularViewModel())
+            HomePopularView().environmentObject(HomePopularViewModel()).preferredColorScheme(.dark)
         }
     }
 }
