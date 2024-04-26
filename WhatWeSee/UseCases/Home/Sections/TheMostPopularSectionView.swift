@@ -32,8 +32,10 @@ struct TheMostPopularSectionView: View {
                 .padding(.top, 20)
                 .padding(.leading, 10)
                 .font(.title)
+                .foregroundStyle(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
+        
     }
 }
 
