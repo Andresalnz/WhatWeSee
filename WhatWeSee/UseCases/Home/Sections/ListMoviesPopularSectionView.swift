@@ -14,7 +14,7 @@ struct ListMoviesPopularSectionView: View {
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        Section {
+        CustomSectionHeaderView(content: {
             LazyVGrid(columns: columns, spacing: 30, content: {
                 ForEach(listMoviesPopular, id: \.id) { movie in
                     if let posterPath = movie.posterPath  {
@@ -25,14 +25,7 @@ struct ListMoviesPopularSectionView: View {
                     }
                 }
             })
-        } header: {
-            Text(titleSection)
-                .padding(.top, 20)
-                .padding(.leading, 10)
-                .font(.title)
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity, alignment: .leading)
-        }
+        }, header: titleSection)
     }
 }
 

@@ -13,7 +13,7 @@ struct TheMostPopularSectionView: View {
     let listMoviesPopular: [PopularMovieBO]
     
     var body: some View {
-        Section {
+        CustomSectionHeaderView(content: {
             if let posterPath = listMoviesPopular.first?.posterPath  {
                 AsyncImage(url: URL(string: "\(Constants.buildImage)\(posterPath)")) { poster in
                     poster.image?.resizable()
@@ -27,15 +27,7 @@ struct TheMostPopularSectionView: View {
             })
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.leading, 210)
-        } header: {
-            Text(titleSection)
-                .padding(.top, 20)
-                .padding(.leading, 10)
-                .font(.title)
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        
+        }, header: titleSection)
     }
 }
 
