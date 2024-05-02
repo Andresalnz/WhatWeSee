@@ -15,9 +15,9 @@ struct HomePopularView: View {
         SectionsHomePopularView {
             ListGenreSection(listGenres: viewModel.genresMovie, currentGenre: $viewModel.currentGenre)
             
-            TheMostPopularSectionView(titleSection: Constants.titleMorePopularHome, listMoviesPopular: viewModel.popularMovies)
+            TheMostPopularSectionView(titleSection: Constants.titleMorePopularHome, listMoviesPopular: viewModel.popularMoviesFilterGenre)
             
-            ListMoviesPopularSectionView(titleSection: viewModel.currentGenre, listMoviesPopular: viewModel.popularMovies)
+            ListMoviesPopularSectionView(titleSection: viewModel.currentGenre, listMoviesPopular: viewModel.popularMoviesFilterGenre)
         }
         .onAppear {
             viewModel.loadUI()

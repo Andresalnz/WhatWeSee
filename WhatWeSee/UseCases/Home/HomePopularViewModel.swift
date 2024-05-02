@@ -20,7 +20,23 @@ final class HomePopularViewModel: ObservableObject {
         self.genresMovie = genresMovie
         self.popularMovies = popularMovies
     }
-
+    
+    var popularMoviesFilterGenre: [PopularMovieBO] {
+        for genre in genresMovie {
+            if genre.name == currentGenre {
+                let filterMovies = popularMovies.filter { movie in
+                    movie.genreIds!.contains(genre.id!)
+                }
+                if filterMovies.isEmpty {
+                    return popularMovies
+                }
+                
+                return filterMovies
+            }
+        }
+        return popularMovies
+    }
+    
     func loadUI() {
         Task {
             try await loadData()
