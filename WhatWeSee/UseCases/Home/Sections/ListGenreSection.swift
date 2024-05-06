@@ -20,7 +20,7 @@ struct ListGenreSection: View {
                 HStack {
                     ForEach(listGenres, id: \.id) { genre in
                         ButtonView(title: genre.name ?? "", foregroundColor: .white, styleButton: .bordered, action: {
-                            currentGenre = genre.name ?? "Populares"
+                            currentGenre = genre.name ?? "-"
                         })
                     }
                 }
