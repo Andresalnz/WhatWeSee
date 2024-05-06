@@ -16,6 +16,7 @@ struct Constants {
     //MARK: - Provider
     static let buildImage: String = "https://image.tmdb.org/t/p/w500/"
     static let genreMovieList: String =  "/genre/movie/list"
+    static let moviePopular: String = "/movie/popular"
     static let uri: String = "https://api.themoviedb.org/3"
     static let apiKey: String = "?api_key=d24265d9cbfd2e4119f0539b474f7c64"
     

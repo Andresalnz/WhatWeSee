@@ -19,12 +19,14 @@ final class Util {
     
     enum Services {
         case genreList
-        
+        case popularMovies
         
         func url() -> URL? {
             switch self {
                 case .genreList:
                     return URL(string: Constants.uri + Constants.genreMovieList + Constants.apiKey)
+                case .popularMovies:
+                    return URL(string: Constants.uri + Constants.moviePopular + Constants.apiKey)
             }
         }
     }
