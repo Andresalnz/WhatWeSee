@@ -18,7 +18,8 @@ struct Constants {
     static let genreMovieList: String =  "/genre/movie/list"
     static let moviePopular: String = "/movie/popular"
     static let uri: String = "https://api.themoviedb.org/3"
-    static let apiKey: String = "?api_key=d24265d9cbfd2e4119f0539b474f7c64"
+    static let apiKey: String = "?api_key=\(String(describing: key))"
+    static let key: String = Util.getApiKey()
     
     
 }
