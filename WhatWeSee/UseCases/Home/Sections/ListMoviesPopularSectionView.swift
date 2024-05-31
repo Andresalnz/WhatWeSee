@@ -14,18 +14,16 @@ struct ListMoviesPopularSectionView: View {
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        CustomSectionHeaderView(content: {
-            LazyVGrid(columns: columns, spacing: 30, content: {
-                ForEach(listMoviesPopular, id: \.id) { movie in
-                    if let posterPath = movie.posterPath  {
-                        AsyncImage(url: URL(string: "\(Constants.buildImage)\(posterPath)")) { poster in
-                            poster.image?.resizable()
-                                .frame(width: 150, height: 220)
-                        }
+        LazyVGrid(columns: columns, spacing: 30, content: {
+            ForEach(listMoviesPopular, id: \.id) { movie in
+                if let posterPath = movie.posterPath  {
+                    AsyncImage(url: URL(string: "\(Constants.buildImage)\(posterPath)")) { poster in
+                        poster.image?.resizable()
+                            .frame(width: 150, height: 220)
                     }
                 }
-            })
-        }, header: titleSection)
+            }
+        })
     }
 }
 
