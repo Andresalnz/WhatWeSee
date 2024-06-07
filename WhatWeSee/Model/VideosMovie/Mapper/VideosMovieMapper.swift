@@ -18,6 +18,7 @@ extension ResultVideosMovieDTO {
                                    type: type,
                                    official: official,
                                    publishedAt: .now,
-                                   id: id)
+                                   id: id,
+                                   itemVO: VideosMovieVO())
     }
 }

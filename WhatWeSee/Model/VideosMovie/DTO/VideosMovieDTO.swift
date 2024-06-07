@@ -23,7 +23,7 @@ struct ResultVideosMovieDTO: Codable, Identifiable, Hashable {
     let publishedAt, id: String?
 
     enum CodingKeys: String, CodingKey {
-        case language = "iso639_1"
+        case language = "iso_639_1"
         case country = "iso_3166_1"
         case name, key, site, size, type, official
         case publishedAt = "published_at"
