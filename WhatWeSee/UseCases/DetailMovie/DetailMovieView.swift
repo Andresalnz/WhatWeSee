@@ -27,33 +27,7 @@ struct DetailMovieView: View {
                 
                 InformationMovieSectionView(detailMovie: viewModel.detailMovie)
                 
-                GroupBox("Trailers") {
-                    
-                    LazyVGrid(columns: columns, spacing: 20, content: {
-                        ButtonView(title: "trailer", foregroundColor: .accentColor, styleButton: .bordered) {
-                            print("hola")
-                        }
-                        ButtonView(title: "trailer", foregroundColor: .accentColor, styleButton: .bordered) {
-                            print("hola")
-                        }
-                        
-                        ButtonView(title: "trailer", foregroundColor: .accentColor, styleButton: .bordered) {
-                            print("hola")
-                        }
-                        
-                        ButtonView(title: "trailer", foregroundColor: .accentColor, styleButton: .bordered) {
-                            print("hola")
-                        }
-                        ButtonView(title: "trailer", foregroundColor: .accentColor, styleButton: .bordered) {
-                            print("hola")
-                        }
-                        ButtonView(title: "trailer", foregroundColor: .accentColor, styleButton: .bordered) {
-                            print("hola")
-                        }
-                    })
-                }
-                .padding(.top)
-                
+                TrailersMovieSectionView(videosMovie: viewModel.videosMovie)
                 
                 Group {
                     Text("Similar")

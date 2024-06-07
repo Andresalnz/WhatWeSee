@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct TrailersMovieSectionView: View {
+    
+    @State var columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    
+    let videosMovie: [VideosMovieVO]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GroupBox("Trailers") {
+                LazyVGrid(columns: columns, spacing: 0, content: {
+                    ForEach(videosMovie, id: \.id) { video in
+                        if video.type == "Trailer" {
+                            ButtonView(title:  video.site ?? "", foregroundColor: .accentColor, styleButton: .bordered) {
+                                print("hola")
+                            }
+                            
+                        }
+                    }
+                })
+        }
+        .padding(.top)
     }
 }
 
 #Preview {
-    TrailersMovieSectionView()
+    TrailersMovieSectionView(videosMovie:[VideosMovieVO(id: "1", name: "Nombre", site: "Youtube", type: "Trailer", official: true), VideosMovieVO(id: "1", name: "Nombre", site: "Youtube", type: "Trailer", official: true)])
 }
