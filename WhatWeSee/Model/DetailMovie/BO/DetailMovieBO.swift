@@ -37,7 +37,7 @@ struct DetailMovieBO: Codable, Identifiable, Hashable {
     
     let item: DetailMovieVO
     
-    init(id: Int?, adult: Bool?, backdropPath: URL?, belongsToCollection: BelongsToCollectionBO?, budget: Double?, genres: [GenreMovieBO]?, homepage: URL?, imdbId: String?, originCountry: [String]?, originalLanguage: String?, originalTitle: String? = nil, overview: String?, popularity: Double?, posterPath: URL?, productionCompanies: [ProductionCompaniesBO]?, productionCountries: [ProductionCountriesBO]?, releaseDate: String? = nil, revenue: Double?, runtime: Int?, spokenLanguages: [SpokenLanguagesBO]?, status: String?, tagline: String? = nil, title: String?, video: Bool?, voteAverage: Double?, voteCount: Double?, item: DetailMovieVO) {
+    init(id: Int?, adult: Bool?, backdropPath: URL?, belongsToCollection: BelongsToCollectionBO?, budget: Double?, genres: [GenreMovieBO]?, homepage: URL?, imdbId: String?, originCountry: [String]?, originalLanguage: String?, originalTitle: String?, overview: String?, popularity: Double?, posterPath: URL?, productionCompanies: [ProductionCompaniesBO]?, productionCountries: [ProductionCountriesBO]?, releaseDate: String?, revenue: Double?, runtime: Int?, spokenLanguages: [SpokenLanguagesBO]?, status: String?, tagline: String?, title: String?, video: Bool?, voteAverage: Double?, voteCount: Double?, item: DetailMovieVO) {
         self.id = id
         self.adult = adult
         self.backdropPath = backdropPath
@@ -64,7 +64,7 @@ struct DetailMovieBO: Codable, Identifiable, Hashable {
         self.video = video
         self.voteAverage = voteAverage
         self.voteCount = voteCount
-        self.item = DetailMovieVO(id: id, originalTitle: originalTitle, tagLine: tagline, releaseDate: releaseDate, posterPath: posterPath)
+        self.item = DetailMovieVO(id: id, originalTitle: originalTitle, overview: overview, tagLine: tagline, releaseDate: releaseDate, posterPath: posterPath, runtime: runtime, originCountry: originCountry)
     }
     
     enum CodingKeys: String, CodingKey {
