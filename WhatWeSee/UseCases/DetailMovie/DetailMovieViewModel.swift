@@ -12,10 +12,12 @@ final class DetailMovieViewModel: ObservableObject {
     private let interactor: Interactor
     
     @Published var detailMovie: DetailMovieVO
+    @Published var videosMovie: [VideosMovieVO]
    
-    init(interactor: Interactor = Interactor.shared, detailMovie: DetailMovieVO = DetailMovieVO()) {
+    init(interactor: Interactor = Interactor.shared, detailMovie: DetailMovieVO = DetailMovieVO(), videosMovie: [VideosMovieVO] = [VideosMovieVO()]) {
         self.interactor = interactor
         self.detailMovie = detailMovie
+        self.videosMovie = videosMovie
     }
     
     func loadUI() {
@@ -29,10 +31,13 @@ final class DetailMovieViewModel: ObservableObject {
     func loadData() async throws {
         do {
             let getDetailMovie = try await interactor.getDetailMovie()
-           
+            let getVideosMovie = try await interactor.getVideosMovie()
             await MainActor.run {
                 self.detailMovie = getDetailMovie.toBo().item
                 
+                if let videos = getVideosMovie.results {
+                    self.videosMovie = videos.compactMap { $0.toBo().itemVO }
+                }
             }
 
         } catch let error {
