@@ -10,13 +10,14 @@ import SwiftUI
 struct VoteAverageWithImageSectionView: View {
     
     let image: String
+    let vote: Double?
     
     var body: some View {
         HStack {
             Image(systemName: image)
                 .font(.title2)
                 .foregroundStyle(.yellow)
-            Text(String(format: "%.1f", 9.233))
+            Text(String(format: "%.1f", vote ?? 0.000))
                 .font(.title)
                 .foregroundStyle(.white)
             
@@ -28,5 +29,5 @@ struct VoteAverageWithImageSectionView: View {
 }
 
 #Preview {
-    VoteAverageWithImageSectionView(image: "")
+    VoteAverageWithImageSectionView(image: "", vote: 9.233)
 }
