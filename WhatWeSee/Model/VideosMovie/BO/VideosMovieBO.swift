@@ -67,4 +67,5 @@ enum TypeEnum: String, Codable {
     case featurette = "Featurette"
     case teaser = "Teaser"
     case trailer = "Trailer"
+    case bloopers = "Bloopers"
 }
