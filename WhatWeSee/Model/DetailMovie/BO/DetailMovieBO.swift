@@ -64,7 +64,7 @@ struct DetailMovieBO: Codable, Identifiable, Hashable {
         self.video = video
         self.voteAverage = voteAverage
         self.voteCount = voteCount
-        self.item = DetailMovieVO(id: id, originalTitle: originalTitle, overview: overview, tagLine: tagline, releaseDate: releaseDate, posterPath: posterPath, runtime: runtime, originCountry: originCountry)
+        self.item = DetailMovieVO(id: id, originalTitle: originalTitle, overview: overview, tagLine: tagline, releaseDate: releaseDate, posterPath: posterPath, runtime: runtime, originCountry: originCountry, voteAverage: voteAverage)
     }
     
     enum CodingKeys: String, CodingKey {

@@ -16,6 +16,7 @@ struct DetailMovieVO: Codable, Identifiable, Hashable {
     var posterPath: URL?
     var runtime: Int?
     var originCountry: [String]?
+    var voteAverage: Double?
 }
 
 protocol x: Encodable {
