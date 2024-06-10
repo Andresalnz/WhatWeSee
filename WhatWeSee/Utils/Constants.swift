@@ -10,7 +10,8 @@ import Foundation
 struct Constants {
     //MARK: - Texts
     static let noText: String = "N/A"
-    static let titleMorePopularHome: String = "La más Popular"
+    static let titleMorePopularHome: String = "The most Popular of "
+
     static let myListButton: String = "+ Mi lista"
     
     //MARK: - Provider
