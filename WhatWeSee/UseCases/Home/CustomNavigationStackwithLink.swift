@@ -26,8 +26,6 @@ struct CustomNavigationStackwithLink<Content: View, Destination: View>: View {
             }
             
         }
-        
-        
     }
 }
 

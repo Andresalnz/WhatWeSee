@@ -13,7 +13,7 @@ final class HomePopularViewModel: ObservableObject {
     
     @Published var genresMovie: [GenreMovieBO]
     @Published var popularMovies: [PopularMovieBO]
-    @Published var currentGenre: String = "Popular"
+    @Published var currentGenre: String = "Action"
     
     init(interactor: Interactor = Interactor.shared, genresMovie: [GenreMovieBO] = [], popularMovies: [PopularMovieBO] = []) {
         self.interactor = interactor
