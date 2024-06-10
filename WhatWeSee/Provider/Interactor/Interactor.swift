@@ -25,11 +25,11 @@ struct Interactor: WWSInteractor {
         return try await repository.getJSON(url: Util.Services.popularMovies.url(), type: PopularMovieListDTO.self)
     }
     
-    func getDetailMovie() async throws -> DetailMovieDTO {
-        return try await repository.getJSON(url: URL(string: "https://api.themoviedb.org/3/movie/640146?api_key=d24265d9cbfd2e4119f0539b474f7c64"), type: DetailMovieDTO.self)
+    func getDetailMovie(_ id: Int) async throws -> DetailMovieDTO {
+        return try await repository.getJSON(url: URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=d24265d9cbfd2e4119f0539b474f7c64"), type: DetailMovieDTO.self)
     }
     
-    func getVideosMovie() async throws -> VideosMovieDTO {
-        return try await repository.getJSON(url: URL(string: "https://api.themoviedb.org/3/movie/640146/videos?api_key=d24265d9cbfd2e4119f0539b474f7c64"), type: VideosMovieDTO.self)
+    func getVideosMovie(_ id: Int) async throws -> VideosMovieDTO {
+        return try await repository.getJSON(url: URL(string: "https://api.themoviedb.org/3/movie/\(id)/videos?api_key=d24265d9cbfd2e4119f0539b474f7c64"), type: VideosMovieDTO.self)
     }
 }
