@@ -15,7 +15,7 @@ struct TrailersMovieSectionView: View {
     
     var body: some View {
         GroupBox("Trailers") {
-                LazyVGrid(columns: columns, spacing: 0, content: {
+                LazyVGrid(columns: columns, spacing: 20, content: {
                     ForEach(videosMovie, id: \.id) { video in
                         if video.type == "Trailer" {
                             ButtonView(title:  video.site ?? "", foregroundColor: .accentColor, styleButton: .bordered) {
